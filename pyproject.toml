@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shop-telebot"
+version = "1.0.0"
+description = "A small Telegram shop: products from HTML files, orders go to admins"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Edward Lik" }]
+requires-python = ">=3.10"
+dependencies = ["pyTelegramBotAPI>=4.14", "python-dotenv>=1.0"]
+keywords = ["telegram", "bot", "shop", "telebot"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Communications :: Chat",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+shop-telebot = "shop_telebot.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/mredwardlik/shop-telebot"
+Issues = "https://github.com/mredwardlik/shop-telebot/issues"
+
+[tool.setuptools]
+packages = ["shop_telebot"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "shop_telebot"]
+addopts = "--doctest-modules --ignore=shop_telebot/__main__.py"
