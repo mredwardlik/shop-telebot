@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 test.env
+# Settings with the real token
+config.env
